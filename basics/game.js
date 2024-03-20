@@ -13,6 +13,14 @@ const gameReducer = (state = initialWagonState, action) => {
       days: state.days++
       };
     }
+    case 'travel': {
+      return {
+        ...state,
+        supplies: state.supplies - 20 * action.payload,
+        distance: state.distance + 10 * action.payload,
+        days: action.payload,
+      }
+    }
     default: {
       return state;
     }
