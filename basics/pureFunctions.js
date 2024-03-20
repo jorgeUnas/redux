@@ -8,9 +8,13 @@ export const removeItemAtIndex = (list, index) => {
 };
 
 //Modify impure function
-export const generateUniqueId = () => {
-  const timestamp = Date.now();
-  const random = Math.floor(Math.random() * 1000);
+
+const timestamp = Date.now();
+const random = Math.floor(Math.random() * 1000);
+  
+export const generateUniqueId = (timestamp, random) => {
+  //const timestamp = Date.now();
+  //const random = Math.floor(Math.random() * 1000);
   return timestamp + random;
 };
 
