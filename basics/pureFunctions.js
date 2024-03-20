@@ -12,7 +12,7 @@ export const removeItemAtIndex = (list, index) => {
 const timestamp = Date.now();
 const random = Math.floor(Math.random() * 1000);
   
-export const generateUniqueId = (timestamp, random) => {
+export const generateUniqueId = (timestamp, random) => {  //  a pure function’s output is purely determined by its inputs only!
   //const timestamp = Date.now();
   //const random = Math.floor(Math.random() * 1000);
   return timestamp + random;
