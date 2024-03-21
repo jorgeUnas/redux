@@ -33,3 +33,6 @@ const gameReducer = (state = initialWagonState, action) => {
     }
   }
 };
+
+let wagon = gameReducer(undefined, {});
+console.log(wagon);
