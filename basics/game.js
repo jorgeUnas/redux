@@ -18,7 +18,7 @@ const gameReducer = (state = initialWagonState, action) => {
         ...state,
         supplies: state.supplies - 20 * action.payload,
         distance: state.distance + 10 * action.payload,
-        days: action.payload,
+        days: state.days + action.payload,
       }
     }
     case 'tippedWagon': {
@@ -50,4 +50,9 @@ console.log(wagon);
 // Third day we tip over
 
 wagon = gameReducer(wagon, {type: 'tippedWagon'});
+console.log(wagon);
+
+// Three more days travelling
+
+wagon = gameReducer(wagon, {type: 'travel', payload: 3});
 console.log(wagon);
