@@ -14,11 +14,15 @@ const gameReducer = (state = initialWagonState, action) => {
       };
     }
     case 'travel': {
-      return {
-        ...state,
-        supplies: state.supplies - 20 * action.payload,
-        distance: state.distance + 10 * action.payload,
-        days: state.days + action.payload,
+      if(state.supplies <= 0){ // Nobody travels without supplies
+        return state;
+      }else{
+        return {
+          ...state,
+          supplies: state.supplies - 20 * action.payload,
+          distance: state.distance + 10 * action.payload,
+          days: state.days + action.payload,
+        }
       }
     }
     case 'tippedWagon': {
@@ -56,3 +60,12 @@ console.log(wagon);
 
 wagon = gameReducer(wagon, {type: 'travel', payload: 3});
 console.log(wagon);
+
+// Simulating travelling without supplies
+
+wagon = gameReducer(wagon, {type: 'tippedWagon'});
+console.log(wagon);
+
+wagon = gameReducer(wagon, {type: 'travel', payload: 1});
+console.log(wagon);
+
