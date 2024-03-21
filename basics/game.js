@@ -46,3 +46,8 @@ console.log(wagon);
 
 wagon = gameReducer(wagon, {type: 'gather'});
 console.log(wagon);
+
+// Third day we tip over
+
+wagon = gameReducer(wagon, {type: 'tippedWagon'});
+console.log(wagon);
