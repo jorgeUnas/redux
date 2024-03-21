@@ -10,7 +10,7 @@ const gameReducer = (state = initialWagonState, action) => {
       return {
       ...state,
       supplies: (state.supplies + 15),
-      days: state.days++
+      days: state.days + 1
       };
     }
     case 'travel': {
@@ -25,7 +25,7 @@ const gameReducer = (state = initialWagonState, action) => {
       return {
         ...state,
         supplies: state.supplies - 30,
-        days: state.days++,
+        days: state.days + 1,
       }
     }
     default: {
@@ -40,4 +40,9 @@ console.log(wagon);
 // First day of traveling
 
 wagon = gameReducer(wagon, {type: 'travel', payload: 1});
+console.log(wagon);
+
+// Second day gathering supplies
+
+wagon = gameReducer(wagon, {type: 'gather'});
 console.log(wagon);
