@@ -36,3 +36,8 @@ const gameReducer = (state = initialWagonState, action) => {
 
 let wagon = gameReducer(undefined, {});
 console.log(wagon);
+
+// First day of traveling
+
+wagon = gameReducer(wagon, {type: 'travel', payload: 1});
+console.log(wagon);
