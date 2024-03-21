@@ -21,6 +21,13 @@ const gameReducer = (state = initialWagonState, action) => {
         days: action.payload,
       }
     }
+    case 'tippedWagon': {
+      return {
+        ...state,
+        supplies: state.supplies - 30,
+        days: state.days++,
+      }
+    }
     default: {
       return state;
     }
